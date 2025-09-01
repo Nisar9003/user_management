@@ -1,0 +1,21 @@
+
+{% extends "base.html" %}
+{% block title %}Update User - User Management{% endblock %}
+{% block content %}
+    <h2 class="text-center mb-4">Update User</h2>
+    <form method="POST" class="row g-3">
+        <div class="col-12">
+            <input type="text" name="username" class="form-control" value="{{ user.username }}" disabled>
+        </div>
+        <div class="col-12">
+            <input type="email" name="email" class="form-control" placeholder="New Email" value="{{ user.email }}" required>
+        </div>
+        <div class="col-12 text-center">
+            <input type="submit" class="btn btn-primary" value="Update User">
+        </div>
+    </form>
+    <div class="text-center mt-3">
+        <a href="{{ url_for('users') }}" class="btn btn-outline-primary">Back to Users</a>
+        <a href="{{ url_for('logout') }}" class="btn btn-outline-primary">Logout</a>
+    </div>
+{% endblock %}

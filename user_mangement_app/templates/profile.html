@@ -1,0 +1,25 @@
+
+{% extends "base.html" %}
+{% block title %}Profile - User Management{% endblock %}
+{% block content %}
+    <h2 class="text-center mb-4">Your Profile</h2>
+    <form method="POST" class="row g-3">
+        <div class="col-12">
+            <input type="text" name="username" class="form-control" value="{{ user.username }}" disabled>
+        </div>
+        <div class="col-12">
+            <input type="email" name="email" class="form-control" placeholder="New Email" value="{{ user.email }}">
+        </div>
+        <div class="col-12">
+            <input type="password" name="password" class="form-control" placeholder="New Password (leave blank to keep current)">
+        </div>
+        <div class="col-12 text-center">
+            <input type="submit" class="btn btn-primary" value="Update Profile">
+        </div>
+    </form>
+    <div class="text-center mt-3">
+        <a href="{{ url_for('index') }}" class="btn btn-outline-primary">Home</a>
+        <a href="{{ url_for('users') }}" class="btn btn-outline-primary">View Users</a>
+        <a href="{{ url_for('logout') }}" class="btn btn-outline-primary">Logout</a>
+    </div>
+{% endblock %}
